@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\NavController;
+use App\Models\nav;
+use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +17,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('default_page');
 });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get("/nav", [NavController::class, 'index'])->name("nav");
+
+Route::middleware('add_nav')->group(function ()
+{
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+});
+
