@@ -1,3 +1,4 @@
+
 <?php
 
 use App\Http\Controllers\NavController;
@@ -23,9 +24,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get("/nav", [NavController::class, 'index'])->name("nav");
-
-Route::middleware('add_nav')->group(function ()
-{
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-});
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

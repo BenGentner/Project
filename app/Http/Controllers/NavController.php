@@ -9,6 +9,6 @@ class NavController extends Controller
 {
     public function index()
     {
-        return redirect()->route('root', User::all());
+        return User::all();
     }
 }
