@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\page;
+use App\Models\nav;
 use Illuminate\Database\Seeder;
 
-class defaultPages extends Seeder
+class defaultNav extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,11 +14,10 @@ class defaultPages extends Seeder
      */
     public function run()
     {
-        Page::factory()->create([
-            "title" => "Test",
-            "content" => "ganz viel text",
+        Nav::factory()->create([
+            "name" => "test",
             "url" => "test",
-            "user_id" => 1
+            "page_id" => 1
         ]);
     }
 }

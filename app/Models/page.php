@@ -13,4 +13,9 @@ class page extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function nav()
+    {
+        return $this->belongsTo(nav::class);
+    }
 }

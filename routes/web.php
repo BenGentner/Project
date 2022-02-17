@@ -2,6 +2,7 @@
 <?php
 
 use App\Http\Controllers\NavController;
+use App\Http\Controllers\PageController;
 use App\Models\nav;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
@@ -25,4 +26,10 @@ Auth::routes();
 
 Route::get("/nav", [NavController::class, 'index'])->name("nav");
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/main/{page:url}', [PageController::class, 'show'])->name('page');
+
+//route
+// get url
+// lädt die entsprechende seite
 

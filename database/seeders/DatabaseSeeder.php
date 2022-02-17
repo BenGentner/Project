@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             defaultRoles::class,
             defaultUser::class,
-            defaultPages::class
+            defaultPages::class,
+            defaultNav::class
         ]);
     }
 }

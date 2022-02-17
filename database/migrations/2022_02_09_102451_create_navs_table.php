@@ -16,6 +16,9 @@ class CreateNavsTable extends Migration
         Schema::create('navs', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string("name");
+            $table->string("url");
+            $table->unsignedBigInteger("page_id")->references('page')->on('id')->cascadeOnDelete();
         });
     }
 

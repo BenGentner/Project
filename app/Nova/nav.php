@@ -2,27 +2,27 @@
 
 namespace App\Nova;
 
-use Emilianotisato\NovaTinyMCE\NovaTinyMCE;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Page extends Resource
+class nav extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\page::class;
+    public static $model =  \App\Models\nav::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'title';
+    public static $title = 'name';
 
     /**
      * The columns that should be searched.
@@ -43,8 +43,10 @@ class Page extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
-            Text::make("title","title"),
-            NovaTinyMCE::make("content", "content")
+            Text::make("Element name in navigation", "name"),
+            Text::make("url", "url"),
+            BelongsTo::make("page")
+
         ];
     }
 

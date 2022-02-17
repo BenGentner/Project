@@ -18,6 +18,7 @@ class CreatePagesTable extends Migration
             $table->timestamps();
             $table->string("title");
             $table->text("content");
+            $table->string("url");
             $table->unsignedBigInteger("user_id")->references('id')->on('users');
         });
     }
