@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('default_page');
+    return view('master');
 });
 
 Auth::routes();

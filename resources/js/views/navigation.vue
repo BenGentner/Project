@@ -1,7 +1,7 @@
 <template>
-    <nav>
+    <nav class="flex pt-3 relative">
         <ul>
-            <nav_element v-for="nav_element in nav_elements"
+            <nav_element class="p-6 py-3" v-for="nav_element in nav_elements"
                          v-bind:data="nav_element"
                          v-bind:key="nav_element.id"
             ></nav_element>

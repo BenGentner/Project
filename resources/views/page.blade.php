@@ -1,6 +1,10 @@
 @extends("master")
 
 @section("content")
-    help
-    {{ $page->content }}
+        <div class="bg-danger text-white w-75 ">
+            {{ $page->content }}
+        </div>
+
+
+
 @endsection
