@@ -10,6 +10,6 @@ class NavController extends Controller
 {
     public function index()
     {
-        return Nav::all();
+        return Nav::all()->load("page");
     }
 }

@@ -44,8 +44,8 @@ class nav extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
             Text::make("Element name in navigation", "name"),
-            Text::make("url", "url"),
-            BelongsTo::make("page")
+            BelongsTo::make("page"),
+            //Text::make("custom url", "url")->placeholder("default: page url"), kann evtl. noch gemacht werden
 
         ];
     }

@@ -5,6 +5,7 @@ namespace App\Nova;
 use Emilianotisato\NovaTinyMCE\NovaTinyMCE;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -44,7 +45,9 @@ class Page extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
             Text::make("title","title"),
-            NovaTinyMCE::make("content", "content")
+            Text::make("Url","url"),
+            NovaTinyMCE::make("content", "content"),
+            Number::make('user_id')->hideWhenCreating(), //Auto insert in model
         ];
     }
 

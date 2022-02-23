@@ -15,9 +15,12 @@ class defaultNav extends Seeder
     public function run()
     {
         Nav::factory()->create([
+           "name" => "Startseite",
+           "page_id" => 1
+        ]);
+        Nav::factory()->create([
             "name" => "test",
-            "url" => "test",
-            "page_id" => 1
+            "page_id" => 2
         ]);
     }
 }

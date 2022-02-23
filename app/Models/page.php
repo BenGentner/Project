@@ -18,4 +18,13 @@ class page extends Model
     {
         return $this->belongsTo(nav::class);
     }
+    public static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($page)
+        {
+            $page->user_id = auth()->user()->id;
+        });
+    }
 }

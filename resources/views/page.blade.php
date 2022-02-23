@@ -1,8 +1,8 @@
 @extends("master")
 
 @section("content")
-        <div class="bg-danger text-white w-75 ">
-            {{ $page->content }}
+        <div class="p-6 bg-gray-100 w-75 ">
+            {!!  $page->content !!}
         </div>
 
 

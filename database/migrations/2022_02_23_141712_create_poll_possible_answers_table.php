@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateNavsTable extends Migration
+class CreatePollPossibleAnswersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateNavsTable extends Migration
      */
     public function up()
     {
-        Schema::create('navs', function (Blueprint $table) {
+        Schema::create('poll_possible_answers', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string("name");;
-            $table->unsignedBigInteger("page_id")->references('page')->on('id')->cascadeOnDelete();
+            $table->string("title");
+            $table->unsignedBigInteger("poll_id")->references('id')->on('poll');
         });
     }
 
@@ -28,6 +28,6 @@ class CreateNavsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('navs');
+        Schema::dropIfExists('poll_possible_answers');
     }
 }

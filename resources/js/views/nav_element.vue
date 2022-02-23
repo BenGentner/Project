@@ -1,6 +1,6 @@
 <template>
 
-        <a :href="'/main/' + $attrs.data.url">{{$attrs.data.name}}</a>
+        <a :href="'/main/' + $attrs.data.page.url">{{$attrs.data.name}}</a>
 
 </template>
 
