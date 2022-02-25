@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class poll extends Model
 {
     use HasFactory;
+
+    public function answers()
+    {
+        return $this->hasMany(poll_possible_answers::class);
+    }
 }

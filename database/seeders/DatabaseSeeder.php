@@ -18,7 +18,9 @@ class DatabaseSeeder extends Seeder
             defaultRoles::class,
             defaultUser::class,
             defaultPages::class,
-            defaultNav::class
+            defaultNav::class,
+            PollSeeder::class,
+            PollPossibleAnswersSeeder::class,
         ]);
     }
 }

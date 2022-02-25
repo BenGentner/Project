@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\poll_possible_answers;
 use Illuminate\Database\Seeder;
 
 class PollPossibleAnswersSeeder extends Seeder
@@ -13,6 +14,13 @@ class PollPossibleAnswersSeeder extends Seeder
      */
     public function run()
     {
-        //
+        poll_possible_answers::factory()->create([
+            "poll_id" => 1,
+            "title" => "187"
+        ]);
+        poll_possible_answers::factory()->create([
+            "poll_id" => 1,
+            "title" => "420"
+        ]);
     }
 }
