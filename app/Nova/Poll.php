@@ -7,7 +7,7 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class poll extends Resource
+class Poll extends Resource
 {
     /**
      * The model the resource corresponds to.
@@ -43,6 +43,7 @@ class poll extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
             Text::make("Title", "title"),
+            Text::make("URL", "url")
         ];
     }
 

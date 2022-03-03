@@ -16,7 +16,7 @@ class CreatePollAnswersTable extends Migration
         Schema::create('poll_answers', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->unsignedBigInteger("answer")->references('id')->on('poll_possible_answers');
+            $table->unsignedBigInteger("answer_id")->references('id')->on('poll_possible_answers');
             $table->unsignedBigInteger("user_id")->references('id')->on('users');
         });
     }

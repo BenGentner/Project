@@ -24,8 +24,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get("/nav", [NavController::class, 'index'])->name("nav");
+Route::get("/nav", [NavController::class, 'show'])->name("nav");
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/poll', [\App\Http\Controllers\PollController::class, 'show']);
+Route::get('/poll/{poll:url}', [\App\Http\Controllers\PollController::class, 'index']);
 
 Route::get('/main/{page:url}', [PageController::class, 'show'])->name('page');
 

@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class NavController extends Controller
 {
-    public function index()
+    public function show()
     {
         return Nav::all()->load("page");
     }

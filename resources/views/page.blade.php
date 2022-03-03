@@ -5,6 +5,4 @@
             {!!  $page->content !!}
         </div>
 
-
-
 @endsection

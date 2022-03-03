@@ -3,25 +3,25 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class role extends Resource
+class Poll_answers extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\role::class;
+    public static $model = \App\Models\poll_answers::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'name';
+    public static $title = 'id';
 
     /**
      * The columns that should be searched.
@@ -42,7 +42,8 @@ class role extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
-            Text::make('Name', 'name'),
+            BelongsTo::make("user"),
+            BelongsTo::make("poll_possible_answers", "answer", "App\Nova\poll_possible_answers"),
         ];
     }
 

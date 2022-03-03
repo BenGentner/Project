@@ -17,6 +17,7 @@ class CreatePollsTable extends Migration
             $table->id();
             $table->string("title");
             $table->unsignedBigInteger("user_id")->references('id')->on('users');
+            $table->string("url")->nullable();
             $table->timestamps();
         });
     }

@@ -46,9 +46,20 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Role::class);
     }
+
     public function pages()
     {
-        return $this->belongsToMany(page::class);
+        return $this->hasMany(page::class);
+    }
+
+    public function polls()
+    {
+        return $this->hasMany(poll::class);
+    }
+
+    public function answers()
+    {
+        return $this->hasMany(poll_answers::class);
     }
 
 }
