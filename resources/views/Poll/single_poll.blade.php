@@ -1,14 +1,10 @@
-{{--will maybe changed to a vue component--}}
-
 @extends("master")
 
 @section("content")
     <div class="p-6 bg-gray-100 w-75 ">
-        <h1>
-            {!! $poll->title !!}
-        </h1>
+        <single_poll  v-bind:data="{{$poll}}" v-bind:data="{{$answers}}"></single_poll>
 
-        {!!  $poll->answers !!}
+{{--        {!! $poll->answer !!}}--}}
     </div>
 
 @endsection

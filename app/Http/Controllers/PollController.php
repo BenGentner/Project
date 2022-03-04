@@ -10,13 +10,16 @@ class PollController extends Controller
     public function show()
     {
         //return view with list of all polls
+
         $polls = Poll::all();
-        return view("Poll.polls", compact('polls'));
+        return $polls;
     }
     public function index(Poll $poll)
     {
         //return view of a single poll with all possible answers
-        return view("Poll.single_poll", compact('poll'));
+
+        $answers = $poll->answers;
+        return view("Poll.single_poll", compact('poll', 'answers'));
     }
     public function create()
     {

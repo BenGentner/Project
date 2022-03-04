@@ -19,8 +19,13 @@ class defaultNav extends Seeder
            "page_id" => 1
         ]);
         Nav::factory()->create([
-            "name" => "test",
+            "name" => "Polls",
             "page_id" => 2
         ]);
+        Nav::factory()->create([
+            "name" => "test",
+            "page_id" => 3
+        ]);
+
     }
 }

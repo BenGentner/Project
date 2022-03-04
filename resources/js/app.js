@@ -28,12 +28,15 @@
 import './bootstrap';
 import router from "./routes";
 import Vue from "vue";
-import Navigation from "./views/navigation"
+import Navigation from "./views/navigation";
+import single_poll from "./views/single_poll";
+import Polls from "./views/polls";
+
 
 new Vue({
     el:"#app",
 
     router: router,
 
-    components: {Navigation}
+    components: {Navigation, single_poll, Polls}
 })

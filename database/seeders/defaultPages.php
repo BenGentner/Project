@@ -32,6 +32,14 @@ class defaultPages extends Seeder
             "url" => "startseite",
             "user_id" => 1
         ]);
+
+        Page::factory()->create([
+            "title" => "Polls",
+            "content" => "<polls></polls>",
+            "url" => "polls",
+            "user_id" => 1
+        ]);
+
         Page::factory()->create([
             "title" => "Test",
             "content" => "ganz viel text",

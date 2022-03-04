@@ -17,6 +17,7 @@ class PollSeeder extends Seeder
         Poll::factory()->create([
             "title" => "Umfrage 1",
             "user_id" => 1,
+            "url" => "umfrage_1",
         ]);
     }
 }
