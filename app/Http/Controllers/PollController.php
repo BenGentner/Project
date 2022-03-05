@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\poll;
+use DB;
 use Illuminate\Http\Request;
 
 class PollController extends Controller
@@ -16,10 +17,16 @@ class PollController extends Controller
     }
     public function index(Poll $poll)
     {
-        //return view of a single poll with all possible answers
+        //return view of a single poll with all answers
 
-        $answers = $poll->answers;
-        return view("Poll.single_poll", compact('poll', 'answers'));
+        $poll_possible_answers = $poll->answers;
+
+        $poll_answers_id = $poll->answers->pluck('id')->toArray();
+
+        $poll_answers = DB::table('poll_answers')
+            ->whereIn('answer_id', $poll_answers_id)->get();
+
+        return view("Poll.answer_poll", compact('poll', 'poll_answers', 'poll_possible_answers'));
     }
     public function create()
     {

@@ -17,6 +17,7 @@ class CreatePollPossibleAnswersTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string("title");
+            $table->integer("poll_answer_nr");
             $table->unsignedBigInteger("poll_id")->references('id')->on('poll');
         });
     }

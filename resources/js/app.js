@@ -33,6 +33,7 @@ import single_poll from "./views/single_poll";
 import Polls from "./views/polls";
 
 
+
 new Vue({
     el:"#app",
 

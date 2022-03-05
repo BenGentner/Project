@@ -9,6 +9,8 @@ class Poll_answers extends Model
 {
     use HasFactory;
 
+    protected $fillable = ["user_id", "answer_id"];
+
     public function user()
     {
         return $this->belongsTo(user::class);
