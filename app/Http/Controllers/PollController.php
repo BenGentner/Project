@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\poll;
+use App\Models\User;
 use DB;
 use Illuminate\Http\Request;
 
@@ -26,7 +27,10 @@ class PollController extends Controller
         $poll_answers = DB::table('poll_answers')
             ->whereIn('answer_id', $poll_answers_id)->get();
 
-        return view("Poll.answer_poll", compact('poll', 'poll_answers', 'poll_possible_answers'));
+        $users = DB::table('users')
+            ->whereIn('role_id', $poll->roles->pluck('id'))->get();
+
+        return view("Poll.answer_poll", compact('poll', 'poll_answers', 'poll_possible_answers', 'users'));
     }
     public function create()
     {

@@ -1,7 +1,8 @@
 <template>
     <div>
         <div v-for="poll in polls">
-            <a :href="'answer_poll/' + poll.url" v-text="poll.title"></a>
+            <h1 v-text="poll.title"></h1>
+            <a class="pr-4" :href="'answer_poll/' + poll.url">Answer</a> <a :href="'answers_poll/' + poll.url">Show Answers</a>
         </div>
     </div>
 

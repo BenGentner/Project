@@ -8,6 +8,8 @@
 export default {
     name: "nav_element",
 
+
+
     data() {
         return {
 

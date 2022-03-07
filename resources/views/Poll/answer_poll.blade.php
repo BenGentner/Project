@@ -6,25 +6,19 @@
     <div class="p-6 bg-gray-100 w-75 ">
         <h1>{{$poll->title}}</h1>
 
-
-        <table class="table">
-            <thead>
-                <tr>
-                    @foreach($poll_possible_answers as $possible_answer)
-                        <th> {{$possible_answer->title}} </th>
-                    @endforeach
-                </tr>
-            </thead>
-            <tfoot>
-{{--            foreach user which has access to the poll => on row with in the table --}}
-{{--            if he answered that row add an x at that place --}}
-{{--            users which have access to the poll have to be added as a var in the controller--}}
-                <tr></tr>
-            </tfoot>
-        </table>
-
-        {{$poll_answers}}
+        <poll_answers
+            :poll="{{$poll}}"
+            :poll_answers="{{$poll_answers}}"
+            :poll_possible_answer="{{$poll_possible_answers}}"
+            :users="{{$users}}"
+        ></poll_answers>
 
     </div>
 
 @endsection
+<script>
+    import Poll_answers from "../../js/views/poll_answers";
+    export default {
+        components: {Poll_answers}
+    }
+</script>

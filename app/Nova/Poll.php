@@ -3,9 +3,11 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use ZiffMedia\NovaSelectPlus\SelectPlus;
 
 class Poll extends Resource
 {
@@ -43,7 +45,8 @@ class Poll extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
             Text::make("Title", "title"),
-            Text::make("URL", "url")
+            Text::make("URL", "url"),
+            SelectPlus::make("Roles", 'roles', 'App\Nova\Role')
         ];
     }
 

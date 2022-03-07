@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             defaultNav::class,
             PollSeeder::class,
             PollPossibleAnswersSeeder::class,
+            PollAnswersSeeder::class,
         ]);
     }
 }

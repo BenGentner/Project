@@ -30,6 +30,7 @@ import router from "./routes";
 import Vue from "vue";
 import Navigation from "./views/navigation";
 import single_poll from "./views/single_poll";
+import poll_answers from "./views/poll_answers";
 import Polls from "./views/polls";
 
 
@@ -39,5 +40,5 @@ new Vue({
 
     router: router,
 
-    components: {Navigation, single_poll, Polls}
+    components: {Navigation, single_poll, Polls, poll_answers}
 })

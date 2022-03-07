@@ -13,4 +13,8 @@ class Poll extends Model
     {
         return $this->hasMany(poll_possible_answers::class);
     }
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class);
+    }
 }
