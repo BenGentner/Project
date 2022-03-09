@@ -24,5 +24,22 @@ class PollSeeder extends Seeder
             "user_id" => 1,
             "url" => "umfrage_2",
         ]);
+
+        \DB::table("poll_role")->insert([
+            "role_id" => 1,
+            "poll_id" => 1
+        ]);
+        \DB::table("poll_role")->insert([
+            "role_id" => 2,
+            "poll_id" => 2
+        ]);
+        \DB::table("poll_role")->insert([
+            "role_id" => 1,
+            "poll_id" => 2
+        ]);
+        \DB::table("poll_role")->insert([
+            "role_id" => 2,
+            "poll_id" => 1
+        ]);
     }
 }
