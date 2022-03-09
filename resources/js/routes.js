@@ -1,5 +1,5 @@
 import VueRouter from "vue-router";
-import Nav from "./views/navigation"
+import Nav from "./views/navigation.vue"
 
 let routes =  [
     {

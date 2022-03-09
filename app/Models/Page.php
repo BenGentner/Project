@@ -24,7 +24,7 @@ class Page extends Model
 
         static::creating(function ($page)
         {
-            #$page->user_id = auth()->user()->id;
+            $page->user_id = auth()->user()->id;
         });
     }
 }

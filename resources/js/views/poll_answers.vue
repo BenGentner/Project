@@ -20,7 +20,7 @@
     </table>
 </template>
 
-<script>
+<script type="module">
 export default {
     name: "poll_answers",
 

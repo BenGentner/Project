@@ -25,12 +25,12 @@
 // app.mount('#app')
 //
 
-import './bootstrap';
-import router from "./routes";
+import './bootstrap.js';
+import router from "./routes.js";
 import Vue from "vue";
 import Navigation from "./views/navigation";
 import single_poll from "./views/single_poll";
-import poll_answers from "./views/poll_answers";
+import poll_answers from './views/poll_answers';
 import Polls from "./views/polls";
 
 

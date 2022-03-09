@@ -11,7 +11,7 @@
 
 </template>
 
-<script>
+<script type="module">
 
 import Nav_element from "./nav_element";
 export default {

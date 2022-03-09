@@ -16,9 +16,4 @@
     </div>
 
 @endsection
-<script>
-    import Poll_answers from "../../js/views/poll_answers";
-    export default {
-        components: {Poll_answers}
-    }
-</script>
+
