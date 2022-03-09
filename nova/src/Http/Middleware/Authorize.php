@@ -2,7 +2,9 @@
 
 namespace Laravel\Nova\Http\Middleware;
 
+use Illuminate\Support\Facades\Auth;
 use Laravel\Nova\Nova;
+use function Psy\debug;
 
 class Authorize
 {
@@ -15,6 +17,16 @@ class Authorize
      */
     public function handle($request, $next)
     {
-        return Nova::check($request) ? $next($request) : abort(403);
+        if(request()->getRequestUri() == "/nova/logout")
+        {
+            Auth::logout();
+            return redirect("/");
+        }
+        if (Auth::check() && Auth::user()->role->name == 'admin') {
+            return $next($request);
+        }
+        abort(403);
+
+
     }
 }

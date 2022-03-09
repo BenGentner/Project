@@ -21,7 +21,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('master');
+    return redirect('/main/startseite');
+//    return view('master')->;
 });
 
 Auth::routes();
@@ -36,5 +37,10 @@ Route::get('/main/answers_poll/{poll:url}', [\App\Http\Controllers\PollControlle
 Route::post('/poll/{poll:url}/answer', [PollAnswersController::class, 'store']);
 
 Route::get('/main/{page:url}', [PageController::class, 'show'])->name('page');
+
+
+// larvel erkennt das die Show methode im PageController ein object page erwartet
+// {page:url} ist ein Platzhalter für das Attribut URL einer Page
+// => laravel prüft ob für die url eine page existiert und gibt dies dann an den Controller weiter
 
 

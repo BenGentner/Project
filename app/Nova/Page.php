@@ -40,6 +40,7 @@ class Page extends Resource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
+
     public function fields(Request $request)
     {
         return [

@@ -27,5 +27,18 @@ class PollAnswersSeeder extends Seeder
             "answer_id" => 5,
             "user_id" => 1
         ]);
+        Poll_answers::factory()->create([
+            "answer_id" => 5,
+            "user_id" => 2
+        ]);
+        Poll_answers::factory()->create([
+            "answer_id" => 3,
+            "user_id" => 3
+        ]);
+        Poll_answers::factory()->create([
+            "answer_id" => 2,
+            "user_id" => 3
+        ]);
     }
+
 }
