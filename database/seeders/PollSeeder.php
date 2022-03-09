@@ -15,9 +15,9 @@ class PollSeeder extends Seeder
     public function run()
     {
         Poll::factory()->create([
-            "title" => "Umfrage 1",
+            "title" => "C# oder Java",
             "user_id" => 1,
-            "url" => "umfrage_1",
+            "url" => "c_java",
         ]);
         Poll::factory()->create([
             "title" => "Umfrage 2",

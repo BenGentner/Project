@@ -12,6 +12,8 @@
 
             <button class="button is-primary">Sumbit</button>
         </form>
+        <br>
+        <a :href="'/main/answers_poll/' + $attrs.data.url">Show Answers</a>
     </div>
 
 </template>

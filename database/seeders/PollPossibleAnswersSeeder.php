@@ -17,29 +17,29 @@ class PollPossibleAnswersSeeder extends Seeder
         poll_possible_answers::factory()->create([
             "poll_id" => 1,
             "poll_answer_nr" => 1,
-            "title" => "187",
+            "title" => "C#",
         ]);
         poll_possible_answers::factory()->create([
             "poll_id" => 1,
             "poll_answer_nr" => 2,
-            "title" => "420"
+            "title" => "Java"
         ]);
 
 
         poll_possible_answers::factory()->create([
             "poll_id" => 2,
             "poll_answer_nr" => 1,
-            "title" => "CP2077"
+            "title" => "Antwort 1"
         ]);
         poll_possible_answers::factory()->create([
             "poll_id" => 2,
             "poll_answer_nr" => 2,
-            "title" => "OW2"
+            "title" => "Antwort 2"
         ]);
         poll_possible_answers::factory()->create([
             "poll_id" => 2,
             "poll_answer_nr" => 3,
-            "title" => "W3"
+            "title" => "Antwort 3"
         ]);
     }
 }

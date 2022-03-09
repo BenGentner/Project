@@ -61,5 +61,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(poll_answers::class);
     }
+    public function isAdmin()
+    {
+        if($this->role->name == "admin")
+        {
+            return true;
+        }
+    }
+
+
 
 }

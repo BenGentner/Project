@@ -48,7 +48,5 @@ class PollAnswersController extends Controller
             ->whereIn('answer_id', $poll_answers_id)->delete();
 
         return "delete successful";
-
-
     }
 }

@@ -11,7 +11,7 @@ class PollController extends Controller
 {
     public function show()
     {
-        //return view with list of all polls
+        //return json of all polls
 
         $polls = Poll::all();
         return $polls;
@@ -32,6 +32,12 @@ class PollController extends Controller
 
         return view("Poll.answer_poll", compact('poll', 'poll_answers', 'poll_possible_answers', 'users'));
     }
+
+
+
+
+
+
     public function create()
     {
         //return crete view
