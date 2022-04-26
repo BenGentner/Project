@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\poll;
+use App\Models\Poll;
 use Illuminate\Database\Seeder;
 
 class PollSeeder extends Seeder
@@ -15,27 +15,15 @@ class PollSeeder extends Seeder
     public function run()
     {
         Poll::factory()->create([
-            "title" => "C# oder Java",
-            "user_id" => 1,
-            "url" => "c_java",
+            "title" => "Zeltlager 2022 - Anwesenheit",
+            "user_id" => 2,
+            "url" => "zeltlager2022-anwesenheit",
         ]);
-        Poll::factory()->create([
-            "title" => "Umfrage 2",
-            "user_id" => 1,
-            "url" => "umfrage_2",
-        ]);
+
 
         \DB::table("poll_role")->insert([
             "role_id" => 1,
             "poll_id" => 1
-        ]);
-        \DB::table("poll_role")->insert([
-            "role_id" => 2,
-            "poll_id" => 2
-        ]);
-        \DB::table("poll_role")->insert([
-            "role_id" => 1,
-            "poll_id" => 2
         ]);
         \DB::table("poll_role")->insert([
             "role_id" => 2,

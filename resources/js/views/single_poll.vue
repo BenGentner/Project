@@ -3,6 +3,13 @@
         <h1 v-text="$attrs.data.title"></h1>
 
         <form @submit.prevent="onsubmit()">
+            <input v-model="form.username">
+            <span class="text-danger"
+                  :disabled="form.errors.any()"
+                  v-if="form.errors.has('username')"
+                  v-text="form.errors.get('username')">
+                </span>
+
             <p v-for="(answer, index) in $attrs.data.answers"
                :key="index">
 
@@ -27,6 +34,7 @@ export default {
         return {
             form: new Form({
                 options: Array(this.$attrs.data.answers.length),
+                username: ''
             }),
 
         }

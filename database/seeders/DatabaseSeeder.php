@@ -16,12 +16,12 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
         $this->call([
             defaultRoles::class,
-            defaultUser::class,
+//            defaultUser::class,
             defaultPages::class,
-            defaultNav::class,
+//            defaultNav::class,
             PollSeeder::class,
             PollPossibleAnswersSeeder::class,
-            PollAnswersSeeder::class,
+//            PollAnswersSeeder::class,
         ]);
     }
 }

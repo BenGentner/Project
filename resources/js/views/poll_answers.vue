@@ -9,12 +9,10 @@
             </thead>
 
             <tbody>
-            <tr v-for="user in users">
-                <th v-text="user.name"></th>
+            <tr v-for="answer in poll_answers">
+                <th v-text="answer.username"></th>
                 <td v-for="possible_answer in poll_possible_answer">
-                    <div v-for="answer in poll_answers">
-                        <div v-if="answer.answer_id === possible_answer.id && answer.user_id === user.id" >x</div>
-                    </div>
+                        <div v-if="answer.answer_id === possible_answer.id" >x</div>
                 </td>
             </tr>
             </tbody>

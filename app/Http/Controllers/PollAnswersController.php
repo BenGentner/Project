@@ -6,6 +6,7 @@ use App\Models\Poll;
 use App\Models\Poll_answers;
 use DB;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use PhpParser\Node\Expr\Array_;
 
 class PollAnswersController extends Controller
@@ -21,6 +22,9 @@ class PollAnswersController extends Controller
 
     public function store(Poll $poll)
     {
+        \request()->validate([
+            "username" => "required", Rule::unique("poll_answers", "username")
+        ]);
         $possible_answers = $poll->answers;
 
         $this->delete($poll);
@@ -31,6 +35,7 @@ class PollAnswersController extends Controller
             {
                 Poll_answers::create([
                     'user_id' => auth()->id(),
+                    'username' => \request("username"),
                     'answer_id' => $possible_answer->id,
                 ]);
             }

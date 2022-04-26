@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\poll_possible_answers;
+use App\Models\Poll_possible_answers;
 use Illuminate\Database\Seeder;
 
 class PollPossibleAnswersSeeder extends Seeder
@@ -14,32 +14,56 @@ class PollPossibleAnswersSeeder extends Seeder
      */
     public function run()
     {
-        poll_possible_answers::factory()->create([
+        poll_possible_answers::create([
             "poll_id" => 1,
             "poll_answer_nr" => 1,
-            "title" => "C#",
+            "title" => "Freitag",
         ]);
-        poll_possible_answers::factory()->create([
+        poll_possible_answers::create([
             "poll_id" => 1,
             "poll_answer_nr" => 2,
-            "title" => "Java"
+            "title" => "Samstag"
         ]);
-
-
-        poll_possible_answers::factory()->create([
-            "poll_id" => 2,
-            "poll_answer_nr" => 1,
-            "title" => "Antwort 1"
-        ]);
-        poll_possible_answers::factory()->create([
-            "poll_id" => 2,
-            "poll_answer_nr" => 2,
-            "title" => "Antwort 2"
-        ]);
-        poll_possible_answers::factory()->create([
-            "poll_id" => 2,
+        poll_possible_answers::create([
+            "poll_id" => 1,
             "poll_answer_nr" => 3,
-            "title" => "Antwort 3"
+            "title" => "Sonntag",
         ]);
+        poll_possible_answers::create([
+            "poll_id" => 1,
+            "poll_answer_nr" => 4,
+            "title" => "Montag"
+        ]);
+        poll_possible_answers::create([
+            "poll_id" => 1,
+            "poll_answer_nr" => 5,
+            "title" => "Dienstag",
+        ]);
+        poll_possible_answers::create([
+            "poll_id" => 1,
+            "poll_answer_nr" => 6,
+            "title" => "Mittwoch"
+        ]);
+        poll_possible_answers::create([
+            "poll_id" => 1,
+            "poll_answer_nr" => 7,
+            "title" => "Donnerstag",
+        ]);
+        poll_possible_answers::create([
+            "poll_id" => 1,
+            "poll_answer_nr" => 8,
+            "title" => "Freitag"
+        ]);
+        poll_possible_answers::create([
+            "poll_id" => 1,
+            "poll_answer_nr" => 9,
+            "title" => "Samstag",
+        ]);
+        poll_possible_answers::create([
+            "poll_id" => 1,
+            "poll_answer_nr" => 10,
+            "title" => "Schnipo (Sonntag)"
+        ]);
+
     }
 }

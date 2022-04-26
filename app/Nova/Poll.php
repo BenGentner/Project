@@ -16,7 +16,7 @@ class Poll extends Resource
      *
      * @var string
      */
-    public static $model = \App\Models\poll::class;
+    public static $model = \App\Models\Poll::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.

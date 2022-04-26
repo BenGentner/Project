@@ -11,10 +11,19 @@ class Poll extends Model
 
     public function answers()
     {
-        return $this->hasMany(poll_possible_answers::class);
+        return $this->hasMany(Poll_possible_answers::class);
     }
     public function roles()
     {
         return $this->belongsToMany(Role::class);
+    }
+    public static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($poll)
+        {
+            $poll->user_id = auth()->user()->id;
+        });
     }
 }

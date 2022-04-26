@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\poll;
+use App\Models\Poll;
 use App\Models\User;
 use DB;
 use Illuminate\Http\Request;

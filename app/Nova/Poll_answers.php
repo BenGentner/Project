@@ -5,6 +5,7 @@ namespace App\Nova;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Poll_answers extends Resource
@@ -14,7 +15,7 @@ class Poll_answers extends Resource
      *
      * @var string
      */
-    public static $model = \App\Models\poll_answers::class;
+    public static $model = \App\Models\Poll_answers::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.

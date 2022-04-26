@@ -5,6 +5,7 @@ namespace App\Nova;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -15,7 +16,7 @@ class Poll_possible_answers extends Resource
      *
      * @var string
      */
-    public static $model = \App\Models\poll_possible_answers::class;
+    public static $model = \App\Models\Poll_possible_answers::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -45,6 +46,7 @@ class Poll_possible_answers extends Resource
             ID::make(__('ID'), 'id')->sortable(),
             Text::make("Title" ,"title"),
             BelongsTo::make("poll"),
+            Number::make("Answer-Number", "poll_answer_nr"),
         ];
     }
 
