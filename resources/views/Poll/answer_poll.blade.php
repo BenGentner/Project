@@ -3,7 +3,7 @@
 @extends("master")
 
 @section("content")
-    <div class="p-6 bg-gray-100 w-75 ">
+    <div class="lg:p-6 p-2 w-5/6 bg-gray-100 lg:w-3/4 ">
         <h1>{{$poll->title}}</h1>
 
         <poll_answers

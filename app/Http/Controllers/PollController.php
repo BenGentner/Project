@@ -27,8 +27,11 @@ class PollController extends Controller
         $poll_answers = DB::table('poll_answers')
             ->whereIn('answer_id', $poll_answers_id)->get();
 
-        $users = DB::table('users')
-            ->whereIn('role_id', $poll->roles->pluck('id'))->get();
+        $users = DB::table('poll_answers')
+            ->select("username")
+            ->whereIn('answer_id', $poll_answers_id)
+            ->groupBy("username")
+            ->get();
 
         return view("Poll.answer_poll", compact('poll', 'poll_answers', 'poll_possible_answers', 'users'));
     }

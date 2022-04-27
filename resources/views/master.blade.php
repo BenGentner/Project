@@ -3,8 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Projekt 12</title>
+    <title>Kjg Estenfeld</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -30,7 +31,7 @@
 
     <navigation></navigation>
 {{--    items in mitte:  justify-center sm:items-center flex --}}
-    <div class="relative flex items-top min-h-screen bg-gray-900  py-4 sm:pt-0 justify-center">
+    <div class="relative flex items-top min-h-screen bg-gray-900 py-4 sm:pt-0 justify-center">
         @include('default_page')
         @yield('content')
     </div>

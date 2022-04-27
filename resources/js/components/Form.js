@@ -53,8 +53,11 @@ class Form
     {
         return new Promise((resolve, reject) => {
 
-            axios[requestType](url, this.data())
-
+            axios[requestType](url, this.data(), {
+                headers: {
+                    Authorization: document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                }
+            })
                 .then(response => {
                     this.onSuccess(response.data);
 

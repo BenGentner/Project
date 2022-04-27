@@ -18,6 +18,7 @@ class CreatePollAnswersTable extends Migration
             $table->timestamps();
             $table->unsignedBigInteger("answer_id")->references('id')->on('poll_possible_answers');
             $table->unsignedBigInteger("user_id")->references('id')->on('users');
+            $table->text("username")->nullable();
         });
     }
 

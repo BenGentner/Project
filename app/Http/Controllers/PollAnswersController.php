@@ -27,16 +27,16 @@ class PollAnswersController extends Controller
         ]);
         $possible_answers = $poll->answers;
 
-        $this->delete($poll);
+        $this->delete($poll, request("username"));
 
         foreach ($possible_answers as $possible_answer)
         {
             if(request()->options[$possible_answer->poll_answer_nr - 1] == 1)
             {
                 Poll_answers::create([
-                    'user_id' => auth()->id(),
-                    'username' => \request("username"),
+                    'user_id' => 1,
                     'answer_id' => $possible_answer->id,
+                    'username' => request("username"),
                 ]);
             }
         }
@@ -44,12 +44,12 @@ class PollAnswersController extends Controller
         return "success!";
     }
 
-    public function delete(Poll $poll)
+    public function delete(Poll $poll, $username)
     {
         $poll_answers_id = $poll->answers->pluck('id')->toArray();
 
         $poll_answers = DB::table('poll_answers')
-            ->where('user_id', "=", auth()->id())
+            ->where('username', "like", $username)
             ->whereIn('answer_id', $poll_answers_id)->delete();
 
         return "delete successful";

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="overflow-x:auto;">
         <table class="table">
             <thead>
             <tr>
@@ -9,10 +9,13 @@
             </thead>
 
             <tbody>
-            <tr v-for="answer in poll_answers">
-                <th v-text="answer.username"></th>
+            <tr v-for="user in users">
+                <th v-text="user.username"></th>
                 <td v-for="possible_answer in poll_possible_answer">
-                        <div v-if="answer.answer_id === possible_answer.id" >x</div>
+                    <div v-for="answer in poll_answers">
+                        <div v-if="answer.answer_id === possible_answer.id && answer.username === user.username">x</div>
+                    </div>
+
                 </td>
             </tr>
             </tbody>
