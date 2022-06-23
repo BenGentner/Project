@@ -28,6 +28,15 @@
     </style>
 </head>
 <div id="app">
+{{--    TODO:
+            - nova isn't working currently (CRSF commented out in kernel because of the polls (won't work otherwise))
+            - Changed nova service provider on stage server:
+            Gate::define('viewNova', function ($user) {
+        return in_array($user->email, [
+            'taylor@laravel.com',
+        ]);
+    });
+            --}}
 
     <navigation></navigation>
 {{--    items in mitte:  justify-center sm:items-center flex --}}
